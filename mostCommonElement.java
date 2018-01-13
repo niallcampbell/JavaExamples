@@ -1,3 +1,5 @@
+// Returns the most common int in an array 
+
 
 public class mostCommonElement
 {
