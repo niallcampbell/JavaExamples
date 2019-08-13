@@ -6,12 +6,10 @@ import java.util.Scanner;
  *  Given an integer, check if it is a palindrome
  *  e.g. 1001 is a palindrome, 1234 is not a palindrome
  * 
- * @author niall.campbell@ammeon.com
+ * 
  */
 public class IntegerPalindrome {
     
-    //Break up the number and store in another int
-    //Compare the two numbers
     public static void checkIfPalindrome()
     {
         Scanner scan = new Scanner(System.in);
