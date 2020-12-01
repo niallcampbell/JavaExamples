@@ -1,2 +1,2 @@
 # JavaExamples
-Collection of Java Code
+Collection of Practice Java Code
