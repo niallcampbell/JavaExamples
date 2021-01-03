@@ -59,5 +59,4 @@ public class DuplicateCharacters {
         System.out.println();
         printNumberOfTimesDuplicateCharsAppear("Java");
     }
-
 }
