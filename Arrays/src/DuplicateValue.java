@@ -1,5 +1,4 @@
 import java.util.HashMap;
-import java.util.MissingFormatArgumentException;
 import java.util.Map.Entry;
 
 public class DuplicateValue {
