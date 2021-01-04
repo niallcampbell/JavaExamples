@@ -1,5 +1,5 @@
-import java.util.Arrays;
 import java.util.HashMap;
+import java.util.MissingFormatArgumentException;
 import java.util.Map.Entry;
 
 public class DuplicateValue {
@@ -55,6 +55,25 @@ public class DuplicateValue {
         return result;
     }
 
+    /**
+     *  Find the missing value in an array 1 - n
+     */
+
+    public static int findMissingValue(int[] arr, int n){
+
+        int expectedSum = 0;
+        for(int i = 1; i <= n; i++){
+            expectedSum += i;
+        }
+
+        int actualSum = 0;
+        for(int i = 0; i < arr.length; i++){
+            actualSum += arr[i];
+        }
+
+        return expectedSum - actualSum;
+    }
+
     public static void main(String[] args) {
         int[] arr = {1,2,3,4,6,5,6};
         System.out.println("Single duplicate value: " + findDuplicateValue(arr));
@@ -68,6 +87,12 @@ public class DuplicateValue {
             System.out.print(arr2Result[i] + " ");
         }
         System.out.println();
+
+        System.out.println();
+
+        int[] arr3 = {1,2,3,4,6};
+        System.out.println("Missing Value: " + findMissingValue(arr3, 6));
+
     }
 
 }
