@@ -86,6 +86,27 @@ public class MiscQs {
 
     }
 
+    /**
+     *  Reverse an array
+     */
+    public static int[] reverseArray(int[] arr){
+
+        int len = arr.length;
+        int temp = 0;
+        int i = 0;
+        int j = len - 1;
+
+        while(i < j){
+            temp = arr[i];
+            arr[i] = arr[j];
+            arr[j] = temp;
+            i++;
+            j--;
+        }
+
+        return arr;
+    }
+
 
     public static void main(String[] args) {
         int[] arr = {23, -45, 78, 92, 12, 45};
@@ -101,6 +122,10 @@ public class MiscQs {
         sumOfPairs(arr2, 9);
         System.out.println();
         sumOfPairsAlt(arr2, 9);
+
+        System.out.println();
+        System.out.println("Reverse array: " + Arrays.toString(arr2));
+        System.out.println(Arrays.toString(reverseArray(arr2)));
     }
 
 }
