@@ -107,6 +107,18 @@ public class MiscQs {
         return arr;
     }
 
+    public static double averageValue(int[] values){
+
+        int count = 0;
+        for(int i = 0; i < values.length; i++){
+            count += values[i];
+        }
+
+        double average = ((double) count) / ((double) values.length);
+
+        return average;
+    }
+
 
     public static void main(String[] args) {
         int[] arr = {23, -45, 78, 92, 12, 45};
@@ -126,6 +138,10 @@ public class MiscQs {
         System.out.println();
         System.out.println("Reverse array: " + Arrays.toString(arr2));
         System.out.println(Arrays.toString(reverseArray(arr2)));
+
+        System.out.println();
+        System.out.println("Average of array: " + Arrays.toString(arr2));
+        System.out.println("Average: " + averageValue(arr2));
     }
 
 }
