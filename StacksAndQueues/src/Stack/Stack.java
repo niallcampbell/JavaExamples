@@ -55,4 +55,8 @@ public class Stack {
         System.out.println();
     }
 
+    public int peek(){
+        return stackArray[top];
+    }
+
 }
