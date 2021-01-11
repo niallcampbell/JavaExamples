@@ -38,6 +38,19 @@ public class Driver {
         myList.printList();
 
         System.out.println();
+        System.out.println("Add nodes");
+        Node node1 = new Node(3);
+        myList.addNode(node1);
+        Node node2 = new Node(2);
+        myList.addNode(node2);
+        myList.printList();
+        System.out.println();
+        System.out.println("Remove dupliactes");
+        myList.removeDuplicateValues();
+        myList.printList();
+        System.out.println();
+
+        System.out.println();
         System.out.println("Find node 3: ");
         Node find = myList.findNode(3);
         if(find == null){

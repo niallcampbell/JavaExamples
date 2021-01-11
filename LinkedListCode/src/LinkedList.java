@@ -1,3 +1,6 @@
+import java.util.HashMap;
+import java.util.Map.Entry;
+
 public class LinkedList {
 
     private Node head;
@@ -191,6 +194,48 @@ public class LinkedList {
         next.setNextNode(current);
 
         head = next;
+
+    }
+
+    /**
+     *  Remove duplicate values in an unsorted linked list. 
+     */
+    public void removeDuplicateValues(){
+
+        HashMap<Integer, Integer> map = new HashMap<Integer, Integer>();
+
+        Node temp = head;
+
+        while(temp.getNext() != null){
+            if(map.containsKey(temp.getValue())){
+                map.put(temp.getValue(), map.get(temp.getValue()) + 1);
+            } else {
+                map.put(temp.getValue(), 1);
+            }
+            temp = temp.getNext();
+        }
+
+        if(map.containsKey(temp.getValue())){
+            map.put(temp.getValue(), map.get(temp.getValue()) + 1);
+        } else {
+            map.put(temp.getValue(), 1);
+        }
+
+        head = null;
+        temp = null;
+
+        for(Entry<Integer, Integer> entry : map.entrySet()){
+            if(head == null){
+                head = new Node(entry.getKey());
+            } else if(head.getNext() == null) {
+                temp = new Node(entry.getKey());
+                head.setNextNode(temp);
+            } else {
+                Node next = new Node(entry.getKey());
+                temp.setNextNode(next);
+                temp = next;
+            }
+        }
 
     }
 
