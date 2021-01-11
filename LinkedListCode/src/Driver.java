@@ -20,6 +20,24 @@ public class Driver {
         myList.printList();
 
         System.out.println();
+        System.out.println("Length of list: " + myList.listLength());
+
+        System.out.println();
+        System.out.println("Middle element: " + myList.getMiddleElement().getValue());
+
+        System.out.println();
+        System.out.println("Middle element in a single pass: " + myList.getMiddleElementInASinglePass().getValue());
+
+        System.out.println();
+        System.out.println("Second node from the end: " + myList.getKthNodeFromTheEnd(2).getValue());
+        System.out.println("Third node from the end: " + myList.getKthNodeFromTheEnd(3).getValue());
+
+        System.out.println();
+        System.out.println("Reverse list");
+        myList.reverseList();
+        myList.printList();
+
+        System.out.println();
         System.out.println("Find node 3: ");
         Node find = myList.findNode(3);
         if(find == null){
@@ -52,6 +70,9 @@ public class Driver {
         myList.deleteNode(4);
         myList.printList();
         myList.deleteNode(1);
+
+        System.out.println();
+        System.out.println("Length of list: " + myList.listLength());
     }
 
 }

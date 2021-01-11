@@ -83,6 +83,117 @@ public class LinkedList {
         return head == null ? true : false;
     }
 
+    public int listLength(){
+        if(head == null){
+            return 0;
+        }
+
+        Node temp = head;
+        int count = 1;
+
+        while(temp.getNext() != null){
+            count++;
+            temp = temp.getNext();
+        }
+
+        return count;
+    }
+
+    public Node getMiddleElement(){
+
+        int length = listLength();
+        int middle = length / 2;
+        Node temp = head;
+        int count = 0;
+
+        while(count < length){
+            if(count == middle){
+                return temp;
+            } else {
+                temp = temp.getNext();
+                count++;
+            }
+        }
+        
+        return null;
+    }
+
+    /**
+     *  Get the middle element in a list in a single pass. 
+     * 
+     *  Use two pointers. First pointer moves every second iteration, second pointer moves every iteration. 
+     *  When second one reaches the end, the first pointer is in the middle. 
+     */
+    public Node getMiddleElementInASinglePass(){
+
+        Node firstPointer = head;
+        Node secondPointer = head;
+        int count = 0;
+
+        while(secondPointer.getNext() != null){
+            count++;
+            if(count % 2 == 0){
+                firstPointer = firstPointer.getNext();
+            }
+            secondPointer = secondPointer.getNext();
+        }
+
+        return firstPointer;
+    }
+
+    /**
+     * 
+     *  Find the Kth element from the end in a single pass. 
+     *  
+     *  Two pointers. Second one starts when the first gets to the kth node. 
+     *  As such the second is always k places behind the first pointer. 
+     *  When the first one reaches the last element, then the second one is k nodes from the end.
+     *  
+     */
+    public Node getKthNodeFromTheEnd(int k){
+
+        Node firstPointer = head;
+        Node secondPointer = head;
+
+        int count = 1;
+
+        while(firstPointer.getNext() != null){
+            if(count >= k){
+                secondPointer = secondPointer.getNext();
+            }
+            firstPointer = firstPointer.getNext();
+            count++;
+        }
+
+        return secondPointer;
+        
+    }
+
+    /**
+     *  Traverse through the list and reverse the next pointers of each node to the previous node. 
+     * 
+     *  Reverse the linked list. 
+     */
+    public void reverseList(){
+
+        Node prev = null;
+        Node current = head;
+        Node next = head.getNext();
+
+        while(next.getNext() != null){
+            current.setNextNode(prev);
+            prev = current;
+            current = next;
+            next = next.getNext();
+        }
+
+        current.setNextNode(prev);
+        next.setNextNode(current);
+
+        head = next;
+
+    }
+
     public void printList() {
         if(isEmpty()){
              System.out.println("The linked list is empty.");
