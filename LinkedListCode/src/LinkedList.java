@@ -9,6 +9,10 @@ public class LinkedList {
         head = null;
     }
 
+    public Node getHead(){
+        return head;
+    }
+
     public void addNode(Node n){
 
         if(head == null){
@@ -62,6 +66,17 @@ public class LinkedList {
 
     }
 
+    public Node removeFirstNode(){
+        if(head == null){
+            return null;
+        }
+
+        Node next = head.getNext();
+        Node temp = head;
+        head = next;
+        return temp;
+
+    }
 
     public Node findNode(int value){
 
