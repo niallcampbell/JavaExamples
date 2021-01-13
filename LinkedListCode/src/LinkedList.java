@@ -254,6 +254,27 @@ public class LinkedList {
 
     }
 
+    /**
+     *  Check if the items in the Linked List are in order. 
+     * 
+     */
+    public boolean isInOrder(){
+
+        Node current = head;
+        Node next = current.getNext();
+
+        while(current.getNext() != null){
+            if(!(current.getValue() <= next.getValue())){
+                return false;
+            } else {
+                current = next;
+                next = next.getNext();
+            }
+        }
+
+        return true;
+    }
+
     public void printList() {
         if(isEmpty()){
              System.out.println("The linked list is empty.");

@@ -86,6 +86,19 @@ public class Driver {
 
         System.out.println();
         System.out.println("Length of list: " + myList.listLength());
+
+        Node node3 = new Node(1);
+        myList.addNode(node3);
+        Node node4 = new Node(2);
+        myList.addNode(node4);
+        Node node5 = new Node(5);
+        myList.addNode(node5);
+        myList.printList();
+        System.out.println("List is in order: " + myList.isInOrder());
+        Node node6 = new Node(4);
+        myList.addNode(node6);
+        myList.printList();
+        System.out.println("List is in order: " + myList.isInOrder());
     }
 
 }
