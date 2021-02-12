@@ -24,10 +24,9 @@ public class StringRotation {
             k++;
         }
 
-        //check the last k elements of arr1 == first k elements of arr2
+        //check if the last k elements of arr1 == first k elements of arr2
         int i = len -k;
         int j = 0;
-
         while(i < len){
             if(arr1[i] != arr2[j]){
                 return false;
@@ -39,7 +38,6 @@ public class StringRotation {
         //check the last k elements of arr1 == first k elements of arr2
         i = 0;
         j = k;
-
         while(i < k){
             if(arr1[i] != arr2[j]){
                 return false;
@@ -51,9 +49,28 @@ public class StringRotation {
         return true;
     }
 
+    /**
+     *  Alternative method to check if two strings are a rotation of each other. 
+     *  Concatenate s1 with itself and check if s2 is a substring. 
+     */
+    public static boolean isRotationAlt(String s1, String s2){
+
+        s1 = s1.concat(s1);
+        return s1.contains(s2);
+    }
+
     public static void printIsRotation(String s1, String s2){
 
         if(isRotation(s1, s2)){
+            System.out.println(s1 + " and " + s2 + " are rotations of each other. ");
+        } else{
+            System.out.println(s1 + " and " + s2 + " are not rotations of each other. ");
+        }
+    }
+
+    public static void printIsRotationAlt(String s1, String s2){
+
+        if(isRotationAlt(s1, s2)){
             System.out.println(s1 + " and " + s2 + " are rotations of each other. ");
         } else{
             System.out.println(s1 + " and " + s2 + " are not rotations of each other. ");
@@ -64,5 +81,10 @@ public class StringRotation {
         printIsRotation("IrelandUSAEngland", "EnglandIrelandUSA");
         printIsRotation("123456", "456123");
         printIsRotation("IrelandUSA", "EnglandIreland");
+
+        System.out.println();
+        printIsRotationAlt("IrelandUSAEngland", "EnglandIrelandUSA");
+        printIsRotationAlt("123456", "456123");
+        printIsRotationAlt("IrelandUSA", "EnglandIreland");
     }
 }
