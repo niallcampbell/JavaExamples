@@ -1,5 +1,4 @@
-import java.util.Arrays;
-import java.util.HashSet;
+import java.util.*;
 
 public class MiscQs {
     
@@ -119,6 +118,29 @@ public class MiscQs {
         return average;
     }
 
+    // Find all pairs of integers whose sum is equal to a given number
+    public static HashMap<Integer, Integer> pairsOfNumbers(int sum){
+		
+		HashMap<Integer, Integer> values = new HashMap<>();
+		
+		for(int i = 1; i < sum; i++){
+			int j = sum - i;
+			if(values.get(j) != null) continue;
+			values.put(i, j);
+		}
+		
+		return values;
+	} 
+	
+	public static void printHashMap(HashMap<Integer, Integer> map){
+		
+		for(Map.Entry<Integer, Integer> entry : map.entrySet()){
+			int v1 = entry.getKey();
+			int v2 = entry.getValue();
+			System.out.println(v1 + " " + v2);
+		}
+	}
+
 
     public static void main(String[] args) {
         int[] arr = {23, -45, 78, 92, 12, 45};
@@ -142,6 +164,10 @@ public class MiscQs {
         System.out.println();
         System.out.println("Average of array: " + Arrays.toString(arr2));
         System.out.println("Average: " + averageValue(arr2));
+
+        System.out.println();
+        HashMap<Integer, Integer> values = pairsOfNumbers(10);
+		printHashMap(values);
     }
 
 }
