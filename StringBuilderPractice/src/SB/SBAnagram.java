@@ -1,4 +1,4 @@
-package src.StringBuilderExamples;
+package SB;
 
 import java.util.Arrays;
 
