@@ -1,3 +1,5 @@
+package src;
+
 import java.util.LinkedHashMap;
 import java.util.Scanner;
 import java.util.Map.Entry;
